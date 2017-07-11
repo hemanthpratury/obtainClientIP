@@ -32,13 +32,14 @@ def net():
 def connectedToInternet():
 	try:
 		x_forward = request.META.get("HTTP_X_FORWARDED_FOR")
+		print x_forward
 		if x_forward:
 			ip = x_forward.split(",")[0]
 		else:
 			ip = request.META.get("REMOTE_ADDR")
 	except:
 		ip="blank"
-	print('ip')
+	#print 'ip'
 	return ip
 
 
